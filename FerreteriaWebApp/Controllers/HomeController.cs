@@ -27,7 +27,8 @@ namespace FerreteriaWebApp.Controllers
             List<Producto> products = _dbContext.Productos.Where(p => p.Stok < 10 && p.Estado == true).OrderBy(p => p.Stok).Take(10).ToList();
             products.ForEach(p => cards.oProductos.Add(p));
             DateTime fechaActual = DateTime.Now;
-            List<DetalleVenta> detalles = _dbContext.DetalleVenta.Where(dv => dv.FechaRegistro <= fechaActual).Include(v => v.IdVentaNavigation).Include(p => p.IdProductoNavigation).OrderBy(dv => dv.FechaRegistro).ToList();
+            DateTime fechaInicial = new DateTime(fechaActual.Year, fechaActual.Month, fechaActual.Day, 00, 00, 00);
+            List<DetalleVenta> detalles = _dbContext.DetalleVenta.Where(dv => dv.FechaRegistro >= fechaInicial && dv.FechaRegistro <= fechaActual).Include(v => v.IdVentaNavigation).Include(p => p.IdProductoNavigation).OrderBy(dv => dv.FechaRegistro).ToList();
             detalles.ForEach(dv => cards.oDetallesVentas.Add(dv));
         
          
