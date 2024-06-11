@@ -24,7 +24,7 @@ namespace FerreteriaWebApp.Models
         public virtual DbSet<Permiso> Permisos { get; set; } = null!;
         public virtual DbSet<Producto> Productos { get; set; } = null!;
         public virtual DbSet<Proveedor> Proveedors { get; set; } = null!;
-        public virtual DbSet<Rol> Rols { get; set; } = null!;
+        public virtual DbSet<RolUsuario> Rols { get; set; } = null!;
         public virtual DbSet<Usuario> Usuarios { get; set; } = null!;
         public virtual DbSet<Venta> Venta { get; set; } = null!;
 
@@ -262,7 +262,7 @@ namespace FerreteriaWebApp.Models
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<Rol>(entity =>
+            modelBuilder.Entity<RolUsuario>(entity =>
             {
                 entity.HasKey(e => e.IdRol)
                     .HasName("PK__ROL__2A49584CA6A0BABE");

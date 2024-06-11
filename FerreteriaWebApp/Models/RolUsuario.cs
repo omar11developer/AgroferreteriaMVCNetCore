@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace FerreteriaWebApp.Models
 {
-    public partial class Rol
+    public partial class RolUsuario
     {
-        public Rol()
+        public RolUsuario()
         {
             Permisos = new HashSet<Permiso>();
             Usuarios = new HashSet<Usuario>();

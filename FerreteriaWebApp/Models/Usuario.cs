@@ -20,7 +20,7 @@ namespace FerreteriaWebApp.Models
         public bool? Estado { get; set; }
         public DateTime? FechaRegistro { get; set; }
 
-        public virtual Rol? IdRolNavigation { get; set; }
+        public virtual RolUsuario? IdRolNavigation { get; set; }
         public virtual ICollection<Compra> Compras { get; set; }
         public virtual ICollection<Venta> Venta { get; set; }
     }

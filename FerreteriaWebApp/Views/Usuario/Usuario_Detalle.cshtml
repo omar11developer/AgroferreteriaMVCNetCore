@@ -1,0 +1,142 @@
+﻿@model FerreteriaWebApp.Models.ViewModels.UsuarioMV
+@{
+    ViewData["Title"] = "Crear Usuario";
+}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+        <li class="breadcrumb-item"><a asp-controller="Usuario" asp-action="Index">Usuario</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Agregar Usuario</li>
+    </ol>
+</nav>
+<br />
+
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="card shadow" style="width: 100;">
+                <div class="card-header"> Detalle </div>
+                <div class="card-body">
+                    dfhsakhfasjh
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9">
+        <div class="">
+            <div class="shadow p-5">
+                <form class="row" action="/" method="post">
+                    <div class="col-md-6">
+                        <label class="form-label " asp-for="oUsuario.Documento"># Documento</label>
+                        <input type="number" class="form-control" placeholder="12345" asp-for="oUsuario.Documento" required />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label " asp-for="oUsuario.NombreCompleto">Nombre Completo</label>
+                        <input class="form-control" type="text" placeholder="Ingrese su nombre" asp-for="oUsuario.NombreCompleto" required />
+                    </div>
+                    <div class="col-md-12">
+                        <label class="form-label " asp-for="oUsuario.Correo">Correo electronico</label>
+                        <input class="form-control" type="email" placeholder="ejemplo@gmail.com" asp-for="oUsuario.Correo" required />
+                    </div>
+                    @if (Model.oUsuario.IdUsuario != 0)
+                    {
+                        <p class="d-inline-flex gap-1 mt-2">
+                            <button class="btn text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                Cambiar Contraseña
+                            </button>
+
+                        </p>
+                        <div class="collapse" id="collapseExample">
+                            <div class="card card-body">
+                                <div class="col-md-6">
+                                    <label class="form-label " asp-for="oUsuario.Clave">Nueva Contraseña</label>
+                                    <input class="form-control" type="password" asp-for="oUsuario.Clave"  />
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex">
+                                        <div class="w-100">
+                                            <label class="form-label " asp-for="oUsuario.Clave"> Confirmar Contraseña</label>
+                                            <input class="form-control" type="password" asp-for="oUsuario.Clave" />
+
+                                        </div>
+                                        <div class="p-2 flex-shrink-1 align-self-end ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-circle text-danger" viewBox="0 0 16 16">
+                                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-check2-circle text-success visually-hidden " viewBox="0 0 16 16">
+                                                <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0" />
+                                                <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z" />
+                                            </svg>
+                                        </div>
+
+                                    </div>
+                                    <label class="text-danger">Contraseña incorrecta</label>
+                                </div>
+                            </div>
+                        </div>
+                    }else{
+                        <div class="col-md-6">
+                            <label class="form-label " asp-for="oUsuario.Clave">Contraseña</label>
+                            <input class="form-control" type="password" asp-for="oUsuario.Clave" required />
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex">
+                                <div class="w-100">
+                                    <label class="form-label" asp-for="oUsuario.Clave"> Confirmar Contraseña</label>
+                                    <input class="form-control" type="password" asp-for="oUsuario.Clave" required />
+
+                                </div>
+                                <div class="p-2 flex-shrink-1 align-self-end ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-circle text-danger" viewBox="0 0 16 16">
+                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-check2-circle text-success visually-hidden " viewBox="0 0 16 16">
+                                        <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0" />
+                                        <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z" />
+                                    </svg>
+                                </div>
+
+                            </div>
+                            <label class="text-danger">Contraseña incorrecta</label>
+                        </div>
+                    }
+                    
+                    <div class="col-md-6">
+                        <label asp-for="oUsuario.IdRolNavigation.IdRol" class="form-label">Rol</label>
+                        <select class="form-select" asp-for="oUsuario.IdRol" asp-items="@Model.oListaRoles" required>
+                            <option selected>Seleccione un rol...</option>
+                        
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label mt-2">Eliga un estado</label>
+                        <br />
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" asp-for="oUsuario.Estado" name="inlineRadioOptions" id="inlineRadio1" value="true">
+                            <label class="form-check-label" for="inlineRadio1">Activo</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" asp-for="oUsuario.Estado" name="inlineRadioOptions" id="inlineRadio2" value="false">
+                            <label class="form-check-label" for="inlineRadio2">Inactivo</label>
+                        </div>
+                    </div>
+                   <div class="flex mt-4 text-end">
+                        
+                        @if (Model.oUsuario.IdUsuario == 0)
+                        {
+                            <button class="btn btn-primary ">Crear Usuario</button>
+                        }else{
+                            <button class="btn btn-primary ">Editar Usuario</button>
+                        }
+                   </div>
+                </form>
+            </div>
+        </div>
+          
+
+        </div>
+    </div>
+
+
+

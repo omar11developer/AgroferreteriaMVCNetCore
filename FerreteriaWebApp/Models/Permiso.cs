@@ -10,6 +10,6 @@ namespace FerreteriaWebApp.Models
         public string? NombreMenu { get; set; }
         public DateTime? FechaRegistro { get; set; }
 
-        public virtual Rol? IdRolNavigation { get; set; }
+        public virtual RolUsuario? IdRolNavigation { get; set; }
     }
 }

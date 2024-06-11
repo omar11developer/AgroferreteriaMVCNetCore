@@ -180,6 +180,11 @@
                                                 @foreach (var item in Model.oDetallesVentas)
                                                 {
                                                     numerListaDetalle++;
+                                                    if (item.IdVentaNavigation == null || item.IdProductoNavigation== null)
+                                                    {
+                                                        item.IdVentaNavigation = new Venta();
+                                                        item.IdProductoNavigation = new Producto();
+                                                    }
                                                     <tr>
                                                         <th scope="row">@numerListaDetalle</th>
                                                         <td>@item.IdVentaNavigation.NombreCliente</td>
