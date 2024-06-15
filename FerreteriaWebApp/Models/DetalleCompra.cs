@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace FerreteriaWebApp.Models
+﻿namespace FerreteriaWebApp.Models
 {
     public partial class DetalleCompra
     {

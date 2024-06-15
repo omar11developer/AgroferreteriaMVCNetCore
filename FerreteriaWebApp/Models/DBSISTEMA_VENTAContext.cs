@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace FerreteriaWebApp.Models
 {
@@ -30,7 +27,7 @@ namespace FerreteriaWebApp.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-           
+
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

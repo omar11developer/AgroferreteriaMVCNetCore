@@ -1,0 +1,70 @@
+﻿@model FerreteriaWebApp.Models.Usuario
+@{
+    ViewData["Title"] = "Eliminar_Usuario";
+}
+
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+        <li class="breadcrumb-item"><a asp-controller="Usuario" asp-action="Index">Usuario</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Eliminar Usuario</li>
+    </ol>
+</nav>
+
+<div class="row">
+    <div class="col-lg-3">
+        <div class="card shadow" style="width: 100;">
+            <div class="card-header"> Detalle </div>
+            <div class="card-body">
+                dfhsakhfasjh
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-9">
+        <div class="">
+            <div class="shadow p-5">
+
+                <form class="row" asp-action="Eliminar_Usuario" asp-controller="Usuario" method="post">
+                    <input type="hidden" asp-for="IdUsuario" />
+                    <div class="col-md-6">
+                        <label class="form-label " asp-for="Documento"># Documento</label>
+                        <input type="number" class="form-control" placeholder="12345" asp-for="Documento" disabled />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label " asp-for="NombreCompleto">Nombre Completo</label>
+                        <input class="form-control" type="text" placeholder="Ingrese su nombre" asp-for="NombreCompleto" disabled />
+                    </div>
+                    <div class="col-md-12">
+                        <label class="form-label " asp-for="Correo">Correo electronico</label>
+                        <input class="form-control" type="email" placeholder="ejemplo@gmail.com" asp-for="Correo" disabled />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label" asp-for="IdRol">Cargo</label>
+                        <input class="form-control " asp-for="IdRolNavigation.Descripcion" type="text" disabled />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label " asp-for="Estado">Estado</label>
+                        @if (Model.Estado == true)
+                        {
+                            <input class="form-control" type="email" asp-for="Estado" value="Activo" disabled />
+                        }else{
+                            <input class="form-control" type="email" asp-for="Estado" value="Inactivo" disabled />
+                        }
+                        
+                    </div>
+                    <div class="flex mt-4 text-end">
+
+                        
+                       
+                            <button id="submit-btn" type="submit" class="btn btn-danger">Eliminar</button>
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+</div>

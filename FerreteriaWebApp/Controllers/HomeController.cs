@@ -1,10 +1,8 @@
 ﻿using FerreteriaWebApp.Models;
-using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
-
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using FerreteriaWebApp.Models.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 
 namespace FerreteriaWebApp.Controllers
 {
@@ -30,8 +28,8 @@ namespace FerreteriaWebApp.Controllers
             DateTime fechaInicial = new DateTime(fechaActual.Year, fechaActual.Month, fechaActual.Day, 00, 00, 00);
             List<DetalleVenta> detalles = _dbContext.DetalleVenta.Where(dv => dv.FechaRegistro >= fechaInicial && dv.FechaRegistro <= fechaActual).Include(v => v.IdVentaNavigation).Include(p => p.IdProductoNavigation).OrderBy(dv => dv.FechaRegistro).ToList();
             detalles.ForEach(dv => cards.oDetallesVentas.Add(dv));
-        
-         
+
+
 
 
             return View(cards);

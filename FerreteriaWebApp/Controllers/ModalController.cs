@@ -1,8 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using FerreteriaWebApp.Models.ViewModels;
-using FerreteriaWebApp.Models;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using FerreteriaWebApp.Models.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 
 namespace FerreteriaWebApp.Controllers
 {

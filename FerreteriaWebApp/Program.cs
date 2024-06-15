@@ -1,5 +1,5 @@
-using Microsoft.EntityFrameworkCore;
 using FerreteriaWebApp.Models;
+using Microsoft.EntityFrameworkCore;
 
 
 var builder = WebApplication.CreateBuilder(args);

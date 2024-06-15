@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace FerreteriaWebApp.Models
+﻿namespace FerreteriaWebApp.Models
 {
     public partial class Usuario
     {
@@ -17,7 +14,7 @@ namespace FerreteriaWebApp.Models
         public string? Correo { get; set; }
         public string? Clave { get; set; }
         public int? IdRol { get; set; }
-        public bool? Estado { get; set; }
+        public bool Estado { get; set; }
         public DateTime? FechaRegistro { get; set; }
 
         public virtual RolUsuario? IdRolNavigation { get; set; }

@@ -1,4 +1,7 @@
 ﻿$(document).ready(function () {
+   
+
+   
     $('#searchQuery').on('input', function () {
         var searchOption = $('input[name="searchOption"]:checked').val();
         var query = $(this).val().toLowerCase();
@@ -31,3 +34,4 @@
         });
     });
 });
+

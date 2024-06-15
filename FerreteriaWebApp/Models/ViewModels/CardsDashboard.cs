@@ -6,7 +6,7 @@
         public int cantidadVentas { get; set; }
         public int cantidadClientes { get; set; }
 
-       public List<Producto> oProductos = new List<Producto>();
+        public List<Producto> oProductos = new List<Producto>();
         public List<DetalleVenta> oDetallesVentas = new List<DetalleVenta>();
 
     }
